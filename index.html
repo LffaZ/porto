@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alifah Zuhrah Ulyya Suhada | Data Science Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        matcha: {
+                            50: '#f4f9f1',
+                            100: '#e6f2dc',
+                            200: '#c5e1a5', // Primary Matcha
+                            300: '#9ccc65',
+                            800: '#33691e',
+                        },
+                        accent: {
+                            DEFAULT: '#e63946', // Primary Red
+                            hover: '#d62828',
+                        },
+                        surface: '#fdfdfd'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+        .blob-shape {
+            border-radius: 41% 59% 41% 59% / 46% 38% 62% 54%;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 225, 165, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased selection:bg-matcha-200 selection:text-matcha-800">
+
+    <nav class="fixed w-full top-0 z-50 glass-card shadow-sm transition-all py-4">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-slate-900">
+                Alifah<span class="text-accent">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-600 hover:text-accent transition-colors">About</a>
+                <a href="#experience" class="text-slate-600 hover:text-accent transition-colors">Experience</a>
+                <a href="#projects" class="text-slate-600 hover:text-accent transition-colors">Projects</a>
+                <a href="#skills" class="text-slate-600 hover:text-accent transition-colors">Skills</a>
+                <a href="#contact" class="text-slate-600 hover:text-accent transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-matcha-200 text-matcha-800 font-medium rounded-full hover:bg-matcha-300 transition-colors">
+                Let's Talk
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
+            <!-- Decorative Matcha Blob Background -->
+            <div class="absolute top-20 right-0 -mr-20 w-96 h-96 bg-matcha-200 opacity-20 blur-3xl rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-10 left-10 w-72 h-72 bg-matcha-100 opacity-40 blur-2xl rounded-full pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10 w-full">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center space-x-2 bg-matcha-100 text-matcha-800 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-matcha-800 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-matcha-800"></span>
+                        </span>
+                        <span>Available for Opportunities</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                        Hi, I'm Alifah Zuhrah <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-matcha-800 to-matcha-300">Data Science</span> Student.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl">
+                        A passionate learner with experience in Machine Learning, Big Data Processing, and AI Application Development. I build predictive models and robust analytics pipelines.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="px-8 py-3.5 bg-accent text-white font-medium rounded-full hover:bg-accent-hover shadow-lg hover:shadow-accent/30 transition-all transform hover:-translate-y-0.5">
+                            View Projects
+                        </a>
+                        <a href="#about" class="px-8 py-3.5 bg-white border border-slate-200 text-slate-700 font-medium rounded-full hover:border-matcha-300 hover:text-matcha-800 transition-all">
+                            More About Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2 relative">
+                        <div class="w-full aspect-square bg-matcha-100 blob-shape flex items-center justify-center p-8 relative">
+                            <!-- Abstract visual representation since we don't have a photo -->
+                            <div class="absolute inset-0 border-2 border-dashed border-matcha-300 blob-shape scale-105 animate-pulse"></div>
+                            <div class="text-center">
+                                <i class="fa-solid fa-database text-6xl text-matcha-800 mb-4 opacity-80"></i>
+                                <h3 class="text-2xl font-bold text-matcha-800">Data-Driven</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">About Me</h2>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Transforming raw data into actionable intelligence.</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            I am a Bachelor of Computer Science student specialized in Data Science at UPN "Veteran" East Java (Expected May 2027), currently holding a GPA of 3.7/4.0. 
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-8">
+                            My journey involves deep-diving into machine learning, data analytics, big data processing, and AI application development. I have hands-on experience building predictive models, analytics pipelines, and Retrieval-Augmented Generation (RAG) systems. I am eager to apply my technical skills to contribute to data-driven decision-making and AI innovation.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="border-l-2 border-matcha-300 pl-4">
+                                <h4 class="font-bold text-slate-900 text-lg">Education</h4>
+                                <p class="text-sm text-slate-500 mt-1">UPN "Veteran" East Java</p>
+                                <p class="text-xs text-matcha-800 font-medium">Data Science (2027)</p>
+                            </div>
+                            <div class="border-l-2 border-matcha-300 pl-4">
+                                <h4 class="font-bold text-slate-900 text-lg">Location</h4>
+                                <p class="text-sm text-slate-500 mt-1">Surabaya, ID</p>
+                                <p class="text-xs text-matcha-800 font-medium">Open to Remote</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-6 md:px-12">
+                <div class="mb-12">
+                    <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">Experience</h2>
+                    <h3 class="text-3xl font-bold text-slate-900">Work & Leadership</h3>
+                </div>
+
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-matcha-200 before:to-transparent">
+                    
+                    <!-- Experience 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-matcha-200 text-matcha-800 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-briefcase text-sm"></i>
+                        </div>
+                        <div onclick="openModal('https://drive.google.com/file/d/1hP1F1F13zvaIvLiMuk0cleazCwQfB_v0/view?usp=sharing', 'Shape Your Life ID - Certificate')" class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-matcha-300 transition-all duration-300 cursor-pointer group/card relative">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                                <h4 class="font-bold text-lg text-slate-900 group-hover/card:text-matcha-800 transition-colors">Head of Web Developer (Volunteer)</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full whitespace-nowrap">Nov 2025 - May 2026</span>
+                            </div>
+                            <div class="text-matcha-800 font-medium text-sm mb-4">Shape Your Life ID | Remote</div>
+                            <ul class="text-slate-600 text-sm space-y-2 list-disc list-inside">
+                                <li>Led a cross-functional development team of 4 members across 25 Agile sprints.</li>
+                                <li>Coordinated project planning, task execution, and feature delivery.</li>
+                                <li>Collaborated with stakeholders to translate business requirements into technical solutions for 28 project tasks.</li>
+                            </ul>
+                            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-accent opacity-70 group-hover/card:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-file-pdf mr-1.5"></i> View certificate
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-matcha-200 text-matcha-800 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-briefcase text-sm"></i>
+                        </div>
+                        <div onclick="openModal('https://drive.google.com/file/d/1hP1F1F13zvaIvLiMuk0cleazCwQfB_v0/view?usp=sharing', 'Shape Your Life ID - Certificate')" class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-matcha-300 transition-all duration-300 cursor-pointer group/card relative">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                                <h4 class="font-bold text-lg text-slate-900 group-hover/card:text-matcha-800 transition-colors">Back End Developer</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full whitespace-nowrap">Apr 2025 - Nov 2025</span>
+                            </div>
+                            <div class="text-matcha-800 font-medium text-sm mb-4">Shape Your Life ID | Remote</div>
+                            <ul class="text-slate-600 text-sm space-y-2 list-disc list-inside">
+                                <li>Developed and maintained Laravel-based web applications.</li>
+                                <li>Implemented filtering, search, and file management features to improve usability.</li>
+                                <li>Optimized application performance through image compression and platform maintenance.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-matcha-200 text-matcha-800 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-robot text-sm"></i>
+                        </div>
+                        <div onclick="openModal('https://drive.google.com/file/d/1HhlPqgEYYsvhBAR2rhXW05ov5meOC03N/view?usp=sharing', 'PT. Universal Big Data - Certificate')" class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-matcha-300 transition-all duration-300 cursor-pointer group/card relative">
+                            <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                                <h4 class="font-bold text-lg text-slate-900 group-hover/card:text-matcha-800 transition-colors">Chatbot Developer (Internship)</h4>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full whitespace-nowrap">Dec 2022 - May 2023</span>
+                            </div>
+                            <div class="text-matcha-800 font-medium text-sm mb-4">PT. Universal Big Data | Malang</div>
+                            <ul class="text-slate-600 text-sm space-y-2 list-disc list-inside">
+                                <li>Built and deployed enterprise chatbot solutions using Botpress.</li>
+                                <li>Integrated bots across WhatsApp, Telegram, Instagram, and Facebook Messenger.</li>
+                                <li>Contributed as the primary technical author of a 217-page AI chatbot eBook.</li>
+                            </ul>
+                            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-accent opacity-70 group-hover/card:opacity-100 transition-opacity">
+                                <i class="fa-solid fa-file-pdf mr-1.5"></i> View certificate
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">Portfolio</h2>
+                    <h3 class="text-3xl font-bold text-slate-900">Selected Projects</h3>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Showcasing data engineering, machine learning pipelines, and analytics solutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                                <i class="fa-solid fa-network-wired text-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full">Data Engineering</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Zanbil Web Traffic Analytics</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-3">
+                            Processed and analyzed over 10.2 million web log records using PySpark to identify traffic patterns, bot activities, security threats, and business insights through large-scale data analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">PySpark</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Spark SQL</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Plotly</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                                <i class="fa-solid fa-brain text-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full">AI Engineer</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Fake News Chatbot Assistant</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-3">
+                            Engineered a Retrieval-Augmented Generation (RAG) fact-checking platform processing 72,134 news records using LLAMA 3.2, FAISS, and AWS S3 to deliver context-aware responses and real-time dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Django</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">RAG / LangChain</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">LLAMA 3.2</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                                <i class="fa-solid fa-server text-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full">Big Data</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Airbnb Big Data Pipeline</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-3">
+                            Developed a Big Data analytics pipeline leveraging MapReduce and Hive to process Airbnb listings data and generate pricing, room type, and neighborhood-level insights.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Apache Hive</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">MapReduce</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Python</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                                <i class="fa-solid fa-bed text-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full">Machine Learning</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Sleep Health & Lifestyle Analysis</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-3">
+                            Formulated a multinomial logistic regression framework to examine sleep pattern anomalies. Benchmarked classifiers; Random Forest model achieved a peak classification accuracy of 96%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Random Forest</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SVM & KNN</span>
+                            <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Statsmodels</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-10">
+                    <a href="projects.html"
+                    class="text-xs font-semibold text-matcha-800 bg-matcha-100 px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-matcha-200">
+                        View more ►
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 bg-slate-50 border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 text-center">
+                <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">Toolkit</h2>
+                <h3 class="text-3xl font-bold text-slate-900 mb-10">Technical Skills</h3>
+                
+                <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
+                    <!-- Badges -->
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Python</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">SQL</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Pandas</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">NumPy</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Scikit-learn</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">PySpark</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Apache Hadoop</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">AWS</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Django</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Docker</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">Git</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">PostgreSQL</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">RAG</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">LangChain</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">FAISS</span>
+                    <span class="px-5 py-2.5 bg-white border border-matcha-200 text-slate-700 font-medium rounded-full shadow-sm hover:bg-matcha-50 hover:border-matcha-300 transition-colors cursor-default">LLMs</span>
+                </div>
+                
+                <div class="mt-12 bg-matcha-50 rounded-2xl p-6 md:p-8 inline-block max-w-2xl w-full text-left border border-matcha-100">
+                    <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fa-solid fa-certificate text-accent mr-3"></i> Certifications</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-matcha-800 mt-1 mr-2"></i> Fundamentals of Deep Learning - NVIDIA</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-matcha-800 mt-1 mr-2"></i> Transformer-Based Natural Language Processing Applications - NVIDIA</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-matcha-800 mt-1 mr-2"></i> Vocational Competency Test Certification (UKK)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-white relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-red-50 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+                <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">Get In Touch</h2>
+                <h3 class="text-4xl font-bold text-slate-900 mb-6">Let's build something <span class="text-matcha-800">impactful</span> together.</h3>
+                <p class="text-slate-600 mb-10 max-w-xl mx-auto">
+                    Currently open for new opportunities, collaborations, or just a casual chat about data science and AI.
+                </p>
+                
+                <a href="mailto:alifah.zuhrah@gmail.com" class="inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-medium text-lg rounded-full hover:bg-accent-hover shadow-lg shadow-accent/30 transition-all transform hover:-translate-y-1 mb-12">
+                    <i class="fa-regular fa-envelope mr-3"></i> alifah.zuhrah@gmail.com
+                </a>
+
+                <div class="flex justify-center space-x-6 border-t border-slate-100 pt-10">
+                    <a href="http://linkedin.com/in/alifahzuhrah" aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-matcha-100 hover:text-matcha-800 transition-colors">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/LffaZ" aria-label="GitHub" class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-matcha-100 hover:text-matcha-800 transition-colors">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                    <a href="tel:+62895326046547" aria-label="Phone" class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-matcha-100 hover:text-matcha-800 transition-colors">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="certModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 p-4 sm:p-6">
+            <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col h-[85vh] md:h-[90vh]" id="certModalContent">
+                <div class="flex justify-between items-center p-4 md:p-5 border-b border-slate-100 bg-slate-50 shrink-0">
+                    <h4 class="font-bold text-slate-800 text-lg flex items-center gap-2" id="certModalTitle">
+                        <i class="fa-solid fa-certificate text-matcha-800"></i> Certificate
+                    </h4>
+                    <button onclick="closeModal()" class="text-slate-500 hover:text-accent bg-white border border-slate-200 transition-all w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50 hover:border-red-200 focus:outline-none">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="w-full flex-grow bg-slate-100 relative">
+                    <!-- Loading Spinner -->
+                    <div class="absolute inset-0 flex items-center justify-center" id="certLoader">
+                        <i class="fa-solid fa-circle-notch fa-spin text-4xl text-matcha-300"></i>
+                    </div>
+                    <iframe id="certIframe" src="" class="w-full h-full absolute inset-0 border-0 z-10 bg-white" allow="autoplay" onload="document.getElementById('certLoader').style.display='none'"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 py-8 text-center border-t-4 border-matcha-300">
+        <p class="text-slate-400 text-sm">
+            &copy; 2026 Alifah Zuhrah. All rights reserved.<br>
+            <span class="text-xs mt-2 block opacity-70">Designed with HTML & Tailwind CSS</span>
+        </p>
+    </footer>
+
+    <script>
+        function openModal(driveLink, title) {
+            const modal = document.getElementById('certModal');
+            const modalContent = document.getElementById('certModalContent');
+            const iframe = document.getElementById('certIframe');
+            const titleEl = document.getElementById('certModalTitle');
+            const loader = document.getElementById('certLoader');
+
+            // Convert Google Drive view link to preview link for embedding
+            let embedLink = driveLink;
+            if(embedLink.includes('/view')) {
+                embedLink = embedLink.split('/view')[0] + '/preview';
+            }
+
+            // Set content
+            loader.style.display = 'flex'; // show loader while fetching iframe
+            iframe.src = embedLink;
+            if(title) {
+                titleEl.innerHTML = `<i class="fa-solid fa-certificate text-matcha-800"></i> ${title}`;
+            }
+
+            // Show modal container
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Lock body scroll
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certModal');
+            const modalContent = document.getElementById('certModalContent');
+            const iframe = document.getElementById('certIframe');
+
+            // Animate out
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            
+            // Hide container and reset after transition completes
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                iframe.src = ''; // Clear iframe to stop loading
+                document.body.style.overflow = ''; // Restore scroll
+            }, 300);
+        }
+
+        // Close when clicking outside the modal content (the dark backdrop)
+        document.getElementById('certModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close on Escape key press
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('certModal').classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

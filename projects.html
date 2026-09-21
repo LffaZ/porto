@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Alifah Zuhrah Ulyya Suhada</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        matcha: {
+                            50: '#f4f9f1',
+                            100: '#e6f2dc',
+                            200: '#c5e1a5', // Primary Matcha
+                            300: '#9ccc65',
+                            800: '#33691e',
+                        },
+                        accent: {
+                            DEFAULT: '#e63946', // Primary Red
+                            hover: '#d62828',
+                        },
+                        surface: '#fdfdfd'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 225, 165, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased selection:bg-matcha-200 selection:text-matcha-800 flex flex-col min-h-screen">
+
+    <nav class="fixed w-full top-0 z-50 glass-card shadow-sm transition-all py-4">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight text-slate-900">
+                Alifah<span class="text-accent">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html#about" class="text-slate-600 hover:text-accent transition-colors">About</a>
+                <a href="index.html#experience" class="text-slate-600 hover:text-accent transition-colors">Experience</a>
+                <a href="projects.html" class="text-accent transition-colors">Projects</a>
+                <a href="index.html#skills" class="text-slate-600 hover:text-accent transition-colors">Skills</a>
+                <a href="index.html#contact" class="text-slate-600 hover:text-accent transition-colors">Contact</a>
+            </div>
+            <a href="index.html" class="hidden md:inline-block px-5 py-2 bg-matcha-200 text-matcha-800 font-medium rounded-full hover:bg-matcha-300 transition-colors">
+                Back to Main
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-28 pb-20">
+        <section class="max-w-6xl mx-auto px-6 md:px-12 mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-slate-100 pb-8">
+                <div>
+                    <h2 class="text-sm font-bold tracking-widest text-accent uppercase mb-2">Portfolio Archive</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">All Projects</h1>
+                    <p class="text-slate-600 max-w-2xl">A comprehensive collection of my work in Data Engineering, Machine Learning, Analytics, and Data Science spanning across academic, personal, and professional endeavors.</p>
+                </div>
+                <a href="index.html" class="shrink-0 px-8 py-3.5 bg-accent text-white font-medium rounded-full hover:bg-accent-hover shadow-lg hover:shadow-accent/30 transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="mt-8 flex flex-col md:flex-row gap-4 justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                <div class="relative w-full md:w-96">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-search text-slate-400"></i>
+                    </div>
+                    <input type="text" id="searchInput" class="block w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-xl leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-matcha-300 focus:border-matcha-300 sm:text-sm transition-all" placeholder="Search by name, tech stack, or description...">
+                </div>
+                
+                <div class="flex flex-wrap gap-2 w-full md:w-auto justify-start md:justify-end" id="filterContainer">
+                    <button class="filter-btn active bg-matcha-800 text-white px-4 py-2 rounded-full text-xs font-medium border border-transparent transition-all" data-filter="All">All</button>
+                    <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-matcha-300 px-4 py-2 rounded-full text-xs font-medium transition-all" data-filter="Data Engineering">Data Eng / Big Data</button>
+                    <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-matcha-300 px-4 py-2 rounded-full text-xs font-medium transition-all" data-filter="Machine Learning">Machine Learning</button>
+                    <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-matcha-300 px-4 py-2 rounded-full text-xs font-medium transition-all" data-filter="Data Science">Data Science</button>
+                    <button class="filter-btn bg-white text-slate-600 border border-slate-200 hover:border-matcha-300 px-4 py-2 rounded-full text-xs font-medium transition-all" data-filter="Data Analytics">Data Analytics</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 md:px-12">
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Engineering" data-search="zanbil web traffic analytics data engineer pyspark spark sql pandas plotly">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Engineer</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Zanbil Web Traffic Analytics</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Processed and analyzed over 10.2 million web log records using PySpark to identify traffic patterns, bot activities, security threats, and business insights through large-scale data analytics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">PySpark</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Spark SQL</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Pandas</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Plotly</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Engineering" data-search="airbnb big data pipeline big data engineer apache hive mapreduce python pandas matplotlib">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Big Data Engineer</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Airbnb Big Data Pipeline</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Developed a Big Data analytics pipeline leveraging MapReduce and Hive to process Airbnb listings data and generate pricing, room type, and neighborhood-level insights.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Apache Hive</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">MapReduce</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Python</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Pandas</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Machine Learning" data-search="fake news classification pipeline machine learning engineer aws s3 sagemaker python word2vec scikit-learn looker studio">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-robot text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Machine Learning</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Fake News Classification</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Built an end-to-end AWS-based machine learning pipeline for fake news detection on 6,335 news articles, achieving 89.9% classification accuracy using Word2Vec and Linear SVC.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">AWS S3 & SageMaker</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Python</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Word2Vec</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="AI" data-search="fake news chatbot assistant ai engineer django ollama llama 3.2 langchain faiss postgresql aws s3">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">AI Engineer</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Fake News Chatbot Assistant</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Engineered a RAG fact-checking platform processing 72,134 news records using LLAMA 3.2, FAISS, and AWS S3 to deliver context-aware responses and real-time analytics dashboard.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Django</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">LLAMA 3.2 / RAG</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">LangChain</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">FAISS</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Analytics" data-search="spatial-temporal crime analytics dashboard los angeles data analytics lead python pandas geopandas seaborn plotly">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Analytics</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Spatial-Temporal Crime Dashboard</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Led a team-based crime analytics project coordinating dataset integration, preparation, and statistical analysis to identify crime hotspots and temporal patterns across Los Angeles.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Python</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">GeoPandas</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Seaborn</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Plotly</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Machine Learning" data-search="sleep health & lifestyle analysis machine learning engineer python statsmodels naive bayes decision trees svm random forest knn">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-bed text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Machine Learning</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Sleep Health & Lifestyle Analysis</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Formulated a multinomial logistic regression framework. Trained and benchmarked multiple classifiers; Random Forest model achieved a peak classification accuracy of 96% and a balanced F1-score of 0.90 for high-risk Insomnia.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Random Forest</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SVM & KNN</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Statsmodels</span>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Machine Learning" data-search="credit card fraud detection machine learning engineer python smote random forest xgboost stratifiedkfold imbalanced-learn">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Machine Learning</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Credit Card Fraud Detection</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Constructed an end-to-end fraud model on 284,807 imbalanced transactions using SMOTE. Stabilized feature variance via RobustScaler, attaining ROC-AUC metric of 0.9723 for Random Forest & XGBoost.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SMOTE</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">XGBoost</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Random Forest</span>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Science" data-search="cardiovascular disease classification data scientist python statsmodels pandas numpy scipy">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Science</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Cardiovascular Disease Classification</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Formulated a multinomial logistic regression model to evaluate risk variables for stroke and angina. Proved that dummy variable encoding maximized model fit metrics by reducing AIC/BIC scores.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Statsmodels</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Pandas & NumPy</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SciPy</span>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Analytics" data-search="linear regression analysis islamic commercial bank deposit data analyst python scikit-learn excel pandas">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-building-columns text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Analyst</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Bank Deposit Factors Analysis</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Constructed a multiple linear regression model (OLS) to diagnose asset determinants across 11 financial institutions. Achieved Adjusted R-squared of 97.81% validating bank scale impact.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Scikit-learn</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">OLS Regression</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Pandas</span>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Analytics" data-search="psychometric substance factor analysis data analyst python factoranalyzer sympy pandas numpy matplotlib seaborn">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-users-rays text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Analyst</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Psychometric Factor Analysis</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Conducted Exploratory Factor Analysis (EFA) using Varimax rotation on survey profiles of 1,885 respondents. Condensed 11 behavioral variables into 4 distinct pillars explaining 69.9% of variance.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">FactorAnalyzer</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SymPy</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Seaborn</span>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Science" data-search="hospital service clustering pca-ward data scientist principal component analysis agglomerative hierarchical clustering">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-hospital text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Scientist</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Hospital Service PCA-Ward</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Integrated PCA and Ward's clustering to resolve operational collinearity across regional hospital datasets. Constructed a 3-cluster framework validated by a 0.5640 Silhouette score.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">PCA</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Ward Linkage</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Clustering</span>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Science" data-search="comparative hospital clustering analysis data scientist pca k-means k-medoids pam">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-layer-group text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Scientist</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Comparative Hospital Clustering</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Executed a comparative unsupervised learning framework on 35 healthcare datasets to evaluate inpatient service. Utilized Davies-Bouldin metrics to define 3 resource allocation zones.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">K-Means & PAM</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">PCA</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Unsupervised</span>
+                    </div>
+                </div>
+
+                <!-- Project 13 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Science" data-search="customer segmentation k-means data scientist python kmeans++ robustscaler pca vif scikit-learn">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-chart-pie text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Scientist</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Customer Segmentation (K-Means)</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Formulated an unsupervised market personality model over 438 buyer profiles. Executed RobustScaler transformations and leveraged Elbow method to segment targets into 4 high-converting groups.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">KMeans++</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">RobustScaler</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">VIF</span>
+                    </div>
+                </div>
+
+                <!-- Project 14 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Data Science" data-search="jakarta disease spatial profiling data scientist python scipy scikit-learn pandas matplotlib seaborn">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-map-location-dot text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Data Scientist</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Jakarta Disease Spatial Profiling</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Executed an epidemic spatial profiling model over 44 urban districts utilizing Hierarchical Clustering. Mapped local infection risks into 3 operational alert sectors for public health.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Hierarchical Cluster</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SciPy</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Geo Mapping</span>
+                    </div>
+                </div>
+
+                <!-- Project 15 -->
+                <div class="project-card flex flex-col group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-matcha-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-category="Machine Learning" data-search="data mining applications machine learning engineer python xgboost apriori fp-growth tf-idf naive bayes svm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm text-matcha-800 group-hover:bg-matcha-200 transition-colors">
+                            <i class="fa-solid fa-code-branch text-xl"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-accent bg-red-50 px-3 py-1 rounded-full text-center">Machine Learning</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Data Mining Applications</h4>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">
+                        Engineered a banking churn pipeline using Random Forest (67.5% acc). Benchmarked Apriori against FP-Growth algorithms and built automated TF-IDF news text miners utilizing Linear SVM.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">Apriori/FP-Growth</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">TF-IDF</span>
+                        <span class="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2.5 py-1 rounded-md">SVM/XGBoost</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty state (hidden by default) -->
+            <div id="emptyState" class="hidden text-center py-20">
+                <i class="fa-solid fa-folder-open text-6xl text-slate-200 mb-4"></i>
+                <h3 class="text-xl font-bold text-slate-700">No projects found</h3>
+                <p class="text-slate-500 mt-2">Try adjusting your search or filter criteria.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 py-8 text-center border-t-4 border-matcha-300 mt-auto">
+        <p class="text-slate-400 text-sm">
+            &copy; 2026 Alifah Zuhrah. All rights reserved.<br>
+            <span class="text-xs mt-2 block opacity-70">Designed with HTML & Tailwind CSS</span>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const emptyState = document.getElementById('emptyState');
+            
+            let currentCategory = 'All';
+
+            function filterProjects() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const searchData = card.getAttribute('data-search').toLowerCase();
+
+                    // Check if search matches
+                    const matchesSearch = searchData.includes(searchTerm);
+                    // Check if category matches
+                    const matchesCategory = currentCategory === 'All' || category === currentCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        // Using flex because the cards need flex-col to align items properly
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    emptyState.classList.remove('hidden');
+                } else {
+                    emptyState.classList.add('hidden');
+                }
+            }
+
+            // Event Listener for Search Input
+            searchInput.addEventListener('input', filterProjects);
+
+            // Event Listeners for Filter Buttons
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Remove active styles from all buttons
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-matcha-800', 'text-white');
+                        b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                    });
+                    
+                    // Add active style to clicked button
+                    const target = e.currentTarget;
+                    target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                    target.classList.add('bg-matcha-800', 'text-white');
+
+                    // Update category and filter
+                    currentCategory = target.getAttribute('data-filter');
+                    filterProjects();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
